@@ -1,0 +1,112 @@
+<dom-module id="tickets-block">
+    <template>
+        <style>
+            :host {
+                display: block;
+                background: var(--default-primary-color);
+                color: #fff;
+            }
+
+            .container {
+                padding-bottom: 35px;
+            }
+
+            .price-block-wrapper {
+                margin-top: 20px;
+            }
+
+            .ticket-name {
+                margin-bottom: -5px;
+                font-size: 30px;
+                font-weight: 200;
+            }
+
+            .price-block {
+                margin-bottom: 15px;
+            }
+
+            .sold-out > *:not(.sold-out-text) {
+                opacity: .3;
+            }
+
+            .sold-out-text {
+                font-size: 28px;
+                text-transform: uppercase;
+            }
+
+            .currency {
+                margin-top: 21px;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .price {
+                font-size: 70px;
+                font-weight: 200;
+            }
+
+            .details {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            .additional-info {
+                margin-top: -5px;
+                font-size: 13px;
+            }
+
+            .open-dialog-button {
+                margin-top: 30px;
+            }
+
+            paper-dialog {
+                background: #fff;
+            }
+
+            @media (min-height: 400px) {
+                paper-dialog {
+                    min-height: 380px;
+                }
+            }
+
+            paper-dialog .buttons {
+                color: initial;
+            }
+        </style>
+        <div id="pricetable" class="container wrap relative layout vertical text-center">
+            <h4 class="heading">Tickets</h4>
+            <div class="price-block-wrapper flex layout vertical-horizontal">
+                <div class="price-block flex text-center">
+                    <span class="ticket-name block">Student</span>
+                    <span class="price">400</span>
+                    <span class="currency">UAH</span>
+                    <span class="additional-info block">*Before October 23 or 100 tickets.
+                        <br/>Requires valid student ID</span>
+                </div>
+                <div class="price-block flex text-center relative sold-out">
+                    <span class="ticket-name block">Early Bird</span>
+                    <span class="price">600</span>
+                    <span class="currency">UAH</span>
+                    <span class="additional-info block">*Before September 27 or 150 tickets</span>
+                    <div class="fit layout vertical center-center sold-out-text"><span>Sold Out</span></div>
+                </div>
+                <div class="price-block flex text-center">
+                    <span class="ticket-name block">Lazy Bird</span>
+                    <span class="price">800</span>
+                    <span class="currency">UAH</span>
+                    <span class="additional-info block">*Before October 23</span>
+                </div>
+            </div>
+            <span class="details">Tickets grant access to all conference sections, coffee breaks, lunch and party. Accommodation is NOT included in the ticket price.</span>
+            <div class="flex">
+                <paper-button class="white border-button open-dialog-button" d>Buy a ticket</paper-button>
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+
+    Polymer({
+        is: 'tickets-block'
+    });
+</script>
